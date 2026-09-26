@@ -1,29 +1,25 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     private int pedalSpeed = 3;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Debug.Log("start");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        void Update()
+        if (Keyboard.current.upArrowKey.isPressed)
         {
-            if (Input.GetKey("w"))
-            {
-                Debug.Log("w was pressed");
-            }
+            print("up arrow key is held down");
+        }
 
-            if (Input.GetKey("down"))
-            {
-                print("down arrow key is held down");
-            }
+        if (Keyboard.current.downArrowKey.isPressed)
+        {
+            print("down arrow key is held down");
         }
     }
 }
