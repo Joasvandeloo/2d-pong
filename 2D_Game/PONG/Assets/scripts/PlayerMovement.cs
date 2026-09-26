@@ -3,7 +3,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private int pedalSpeed = 3;
+    private int pedalSpeed = 1;
+    private float yp;
     
     void Start()
     {
@@ -14,12 +15,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Keyboard.current.upArrowKey.isPressed)
         {
-            print("up arrow key is held down");
+            yp = yp + pedalSpeed * Time.deltaTime;
         }
 
         if (Keyboard.current.downArrowKey.isPressed)
         {
-            print("down arrow key is held down");
+            yp = yp - pedalSpeed * Time.deltaTime;
         }
+
+        transform.position = transform.position + new Vector3(0, yp, 0);
     }
 }
