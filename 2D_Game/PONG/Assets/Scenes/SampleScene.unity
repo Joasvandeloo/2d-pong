@@ -129,8 +129,9 @@ GameObject:
   m_Component:
   - component: {fileID: 227314337}
   - component: {fileID: 227314336}
+  - component: {fileID: 227314338}
   m_Layer: 0
-  m_Name: playerLeft
+  m_Name: PlayerLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,6 +211,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &227314338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227314335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3321f52566bff83709edc14c23f90b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +326,7 @@ GameObject:
   - component: {fileID: 788335805}
   - component: {fileID: 788335804}
   m_Layer: 0
-  m_Name: playerRight
+  m_Name: PlayerRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -405,7 +418,7 @@ GameObject:
   - component: {fileID: 922972226}
   - component: {fileID: 922972225}
   m_Layer: 5
-  m_Name: scoreLeft
+  m_Name: ScoreLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -645,7 +658,7 @@ GameObject:
   - component: {fileID: 1256757691}
   - component: {fileID: 1256757690}
   m_Layer: 5
-  m_Name: scoreRight
+  m_Name: ScoreRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -781,7 +794,7 @@ GameObject:
   - component: {fileID: 1651178016}
   - component: {fileID: 1651178015}
   m_Layer: 0
-  m_Name: ball
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
