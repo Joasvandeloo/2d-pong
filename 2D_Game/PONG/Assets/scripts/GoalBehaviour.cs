@@ -1,8 +1,13 @@
 using UnityEngine;
+using TMPro;
 
 public class GoalBehaviour : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int score = 0;
+    public TMP_Text scoreText;
+    public BallBehaviour ballScript;
+    public string goalSide;
+    
     void Start()
     {
         
@@ -13,4 +18,20 @@ public class GoalBehaviour : MonoBehaviour
     {
         
     }
+    
+    void OnTriggerEnter2D(Collider2D collision) 
+    {
+        score++;
+        scoreText.text = score.ToString();
+        if (goalSide == "left")
+        {
+            ballScript.ResetBall(-1);
+        }
+        else
+        {
+            ballScript.ResetBall(1);
+        }
+    }
+    
+    
 }

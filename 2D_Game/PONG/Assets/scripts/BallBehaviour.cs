@@ -8,23 +8,24 @@ public class BallBehaviour : MonoBehaviour
     
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();  // Add <Rigidbody2D> here!
-        
-        // Get a random y value between -1 and 1
+        rb = GetComponent<Rigidbody2D>();
         float randomY = Random.Range(-1f, 1f);
-        
-        // Create direction vector
         Vector2 directionVector = new Vector2(1f, randomY);
-        
-        // Normalize the vector
         directionVector.Normalize();
-        
-        // Set velocity
         rb.linearVelocity = ballSpeed * directionVector;
     }
 
     void Update()
     {
         
+    }
+
+    public void ResetBall(int spawnDirection)
+    {
+        float randomY = Random.Range(-1f, 1f);
+        Vector2 directionVector = new Vector2(spawnDirection, randomY);
+        directionVector.Normalize();
+        rb.linearVelocity = ballSpeed * directionVector;
+        transform.position = new Vector2(0, 0);
     }
 }
