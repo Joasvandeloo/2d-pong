@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float pedalSpeed = 5f;  // Change from int to float
+    private float pedalSpeed = 8f;  // Change from int to float
     private float yp;
     public string side;
     

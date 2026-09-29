@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BallBehaviour : MonoBehaviour
 {
-    private int ballSpeed = 5;
+    private int ballSpeed = 10;
     private float direction;
     private Rigidbody2D rb;
     
@@ -27,5 +28,34 @@ public class BallBehaviour : MonoBehaviour
         directionVector.Normalize();
         rb.linearVelocity = ballSpeed * directionVector;
         transform.position = new Vector2(0, 0);
+    }
+    
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.name == "PlayerRight")
+        {
+            if (Keyboard.current.upArrowKey.isPressed)
+            {
+                rb.AddForce(new Vector2(0, 1f), ForceMode2D.Impulse);
+            }
+        
+            if (Keyboard.current.downArrowKey.isPressed)
+            {
+                rb.AddForce(new Vector2(0, -1f), ForceMode2D.Impulse);
+            }
+        }
+        else if (col.gameObject.name == "PlayerLeft")
+        {
+            if (Keyboard.current.wKey.isPressed)
+            {
+                Debug.Log("should add force");
+                rb.AddForce(new Vector2(0, 1f), ForceMode2D.Impulse);
+            }
+        
+            if (Keyboard.current.sKey.isPressed)
+            {
+                rb.AddForce(new Vector2(0, -1f), ForceMode2D.Impulse);
+            }
+        }
     }
 }
