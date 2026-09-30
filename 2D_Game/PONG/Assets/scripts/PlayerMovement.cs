@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float pedalSpeed = 8f;  // Change from int to float
+    private float pedalSpeed = 12f;
     private float yp;
     public string side;
     
@@ -19,12 +19,18 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Keyboard.current.upArrowKey.isPressed)
             {
-                yp = yp + pedalSpeed * Time.deltaTime;
+                if (transform.position.y < 5)
+                {
+                    yp = yp + pedalSpeed * Time.deltaTime;
+                }
             }
 
             if (Keyboard.current.downArrowKey.isPressed)
             {
-                yp = yp - pedalSpeed * Time.deltaTime;
+                if (transform.position.y > -5)
+                {
+                    yp = yp - pedalSpeed * Time.deltaTime;
+                }
             }
             transform.position = new Vector3(7.5f, yp, 0);
         }
@@ -32,12 +38,18 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Keyboard.current.wKey.isPressed)
             {
-                yp = yp + pedalSpeed * Time.deltaTime;
+                if (transform.position.y < 5)
+                {
+                    yp = yp + pedalSpeed * Time.deltaTime;
+                }
             }
 
             if (Keyboard.current.sKey.isPressed)
             {
-                yp = yp - pedalSpeed * Time.deltaTime;
+                if (transform.position.y > -5)
+                {
+                    yp = yp - pedalSpeed * Time.deltaTime;
+                }
             }
             transform.position = new Vector3(-7.5f, yp, 0);
         }

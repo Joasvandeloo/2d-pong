@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class BallBehaviour : MonoBehaviour
 {
-    private int ballSpeed = 10;
+    private int ballSpeed = 8;
     private float direction;
     private Rigidbody2D rb;
     
@@ -36,12 +36,12 @@ public class BallBehaviour : MonoBehaviour
         {
             if (Keyboard.current.upArrowKey.isPressed)
             {
-                rb.AddForce(new Vector2(0, 1f), ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0, 2f), ForceMode2D.Impulse);
             }
         
             if (Keyboard.current.downArrowKey.isPressed)
             {
-                rb.AddForce(new Vector2(0, -1f), ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0, -2f), ForceMode2D.Impulse);
             }
         }
         else if (col.gameObject.name == "PlayerLeft")
@@ -49,12 +49,12 @@ public class BallBehaviour : MonoBehaviour
             if (Keyboard.current.wKey.isPressed)
             {
                 Debug.Log("should add force");
-                rb.AddForce(new Vector2(0, 1f), ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0, 2f), ForceMode2D.Impulse);
             }
         
             if (Keyboard.current.sKey.isPressed)
             {
-                rb.AddForce(new Vector2(0, -1f), ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0, -2f), ForceMode2D.Impulse);
             }
         }
     }
