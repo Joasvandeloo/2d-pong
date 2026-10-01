@@ -32,11 +32,11 @@ public class GoalBehaviour : MonoBehaviour
         
         if (goalSide == "left")
         {
-            ballScript.ResetBall(-1);
+            ballScript.ResetBall(1);
         }
         else
         {
-            ballScript.ResetBall(1);
+            ballScript.ResetBall(-1);
         }
     }
     

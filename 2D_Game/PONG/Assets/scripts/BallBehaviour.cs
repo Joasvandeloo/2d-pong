@@ -18,7 +18,17 @@ public class BallBehaviour : MonoBehaviour
 
     void Update()
     {
-        
+        if (rb.linearVelocity.x < 0)
+        {
+            if (rb.linearVelocity.x > -5)
+            {
+                rb.AddForce(new Vector2(-1f, 0), ForceMode2D.Impulse);
+            }
+        }
+        else if (rb.linearVelocity.x < 5)
+        {
+            rb.AddForce(new Vector2(1f, 0), ForceMode2D.Impulse);
+        }
     }
 
     public void ResetBall(int spawnDirection)
