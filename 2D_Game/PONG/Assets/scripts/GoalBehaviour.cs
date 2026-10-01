@@ -7,6 +7,7 @@ public class GoalBehaviour : MonoBehaviour
     public TMP_Text scoreText;
     public BallBehaviour ballScript;
     public string goalSide;
+    public GameManager managementScript;
     
     void Start()
     {
@@ -23,6 +24,12 @@ public class GoalBehaviour : MonoBehaviour
     {
         score++;
         scoreText.text = score.ToString();
+        if (score >= 10)
+        {
+            managementScript.GameEnd();
+        }
+        
+        
         if (goalSide == "left")
         {
             ballScript.ResetBall(-1);
