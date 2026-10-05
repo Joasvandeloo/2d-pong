@@ -10,11 +10,15 @@ public class GameManager : MonoBehaviour
     public GoalBehaviour leftGoalBehaviour;
     public GoalBehaviour rightGoalBehaviour;
     public GameObject ball;
-
+    public GameObject padelRight;
+    public GameObject padelLeft;
+    
     public void GameEnd()
     {
         gameOverScreen.SetActive(true);
         ball.SetActive(false);
+        padelLeft.SetActive(false);
+        padelRight.SetActive(false);
     }
 
     public void ResetGame()
@@ -27,6 +31,8 @@ public class GameManager : MonoBehaviour
         rightGoalBehaviour.score = 0;
         ball.SetActive(true);
         ballScript.ResetBall(-1);
+        padelLeft.SetActive(true);
+        padelRight.SetActive(true);
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
